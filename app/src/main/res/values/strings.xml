@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Post Stat</string>
+    <string name="app_title">inrating.top</string>
+    <string name="cd_post_statistics_list">Post statistics list</string>
+    <string name="cd_post_statistics_name">Name of the post statistics</string>
+
+    <string name="more">" ещё "</string>
+    <string name="ready">Готово</string>
+    <string name="post_statistics">Статистика поста</string>
+
+    <string name="list_item_click_at_position">list_item_click_at_position</string>
+
+    <string name="stats_refresh_failure_no_inet">Статистику обновить не удалось, т.к. интернет недоступен</string>
+    <string name="ok">OK</string>
+
+</resources>
+
+

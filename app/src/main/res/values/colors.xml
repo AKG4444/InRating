@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="theme_color_1">#58c6c7</color>
+    <color name="theme_color_2">#1e7bdb</color>
+    <color name="posts_stat_activity_bkgr">#dcdcdc</color>
+
+    <color name="colorPrimaryPST">#f9f9f9</color>
+    <color name="colorPrimaryDarkPST">#000000</color>
+
+    <color name="tb_separator">#bbbbbb</color>
+
+</resources>

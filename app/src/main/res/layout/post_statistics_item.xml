@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2017, The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="poststatistics"
+            type="top.inrating.poststat.model.PostStatistics"/>
+        <variable name="callback"
+            type="top.inrating.poststat.ui.PostStatisticsClickCallback"/>
+        <variable
+            name="RVScrollViewModel"
+            type="top.inrating.poststat.ui.RVScrollViewModel" />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/post_statistics_item_min_height"
+        android:onClick="@{() ->  callback.onClick(poststatistics)}"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/post_stat_items_voffset"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="@dimen/post_stat_items_hoffset"
+        android:layout_marginRight="@dimen/post_stat_items_hoffset"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardUseCompatPadding="false"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/elevation_normal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/post_stat_hpadding"
+            android:layout_marginRight="@dimen/post_stat_hpadding"
+            android:layout_marginBottom="2dp"
+            android:orientation="vertical"
+            android:id="@+id/hrv_container">
+
+            <RelativeLayout
+                android:layout_marginLeft="@dimen/post_statistics_item_horizontal_margin"
+                android:layout_marginRight="@dimen/post_statistics_item_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginRight="4dp"
+                        android:alpha="0.4"
+                        app:setAllImgsResIds="@{@typedArray/statistics_icons}"
+                        app:setThisImgResIdIndex="@{poststatistics.type}" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/post_stat_item_tv_height"
+                        android:contentDescription="@string/cd_post_statistics_name"
+                        android:gravity="center_vertical"
+                        app:setAllTxtsResIds="@{@stringArray/statistics_types}"
+                        app:setThisTxtResIdIndex="@{poststatistics.type}" />
+                    <!-- android:text="@{poststatistics.type==0?@stringArray/statistics_types[0]:poststatistics.type==1?@stringArray/statistics_types[1]:poststatistics.type==2?@stringArray/statistics_types[2]:poststatistics.type==3?@stringArray/statistics_types[3]:poststatistics.type==4?@stringArray/statistics_types[4]:poststatistics.type==5?@stringArray/statistics_types[5]:@stringArray/statistics_types[6]}"/>                  -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/post_stat_item_tv_height"
+                        android:gravity="center_vertical"
+                        android:text="@{@string/post_statistics_amount(poststatistics.usersAmount)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <ImageView
+                        androidLid="@id+/iv_more_left"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginRight="-2dp"
+                        app:visibleInvisible="@{RVScrollViewModel.moreAmountLeft>0}"
+                        android:src="@drawable/ic_navigate_back_theme_color_1_24dp" />
+                    <TextView
+                        androidLid="@id+/tv_more_left_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/post_stat_item_tv_height"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/theme_color_1"
+                        app:visibleInvisible="@{RVScrollViewModel.moreAmountLeft>0}"
+                        android:text="@{@string/post_statistics_amount(RVScrollViewModel.moreAmountLeft)}"/>
+                    <TextView
+                        androidLid="@id+/tv_more_prefix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/post_stat_item_tv_height"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/theme_color_1"
+                        app:visibleInvisible="@{RVScrollViewModel.moreAmountRight>0 || RVScrollViewModel.moreAmountLeft>0}"
+                        android:text="@string/more" />
+                    <TextView
+                        androidLid="@id+/tv_more_right_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/post_stat_item_tv_height"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/theme_color_1"
+                        app:visibleInvisible="@{RVScrollViewModel.moreAmountRight>0}"
+                        android:text="@{@string/post_statistics_amount(RVScrollViewModel.moreAmountRight)}"/>
+                    <ImageView
+                        androidLid="@id+/iv_more_right"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="-2dp"
+                        app:visibleInvisible="@{RVScrollViewModel.moreAmountRight>0}"
+                        android:src="@drawable/ic_navigate_next_theme_color_1_24dp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!--
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/gallery_strip_test" />
+                -->
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="-10dp"
+                app:layoutManager="LinearLayoutManager"
+                app:setScrollViewModel="@{RVScrollViewModel}"
+                app:setUsersNicknames="@{poststatistics.usersNicknames}"
+                app:setUsersAvatars="@{poststatistics.usersAvatars}"
+                android:id="@+id/horizontal_recycler_view" />
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>

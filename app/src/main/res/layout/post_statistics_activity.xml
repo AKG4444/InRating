@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="refreshpoststat"
+            type="top.inrating.poststat.ui.RefreshPostStatisticssInitCallback"/>
+        <import type="android.view.View" alias="v"/>
+
+        <variable name="loadingState"
+            type="int" />
+
+        <variable name="backnavigation"
+            type="top.inrating.poststat.ui.BackNavigationInitCallback"/>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:background="@color/posts_stat_activity_bkgr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/post_statistics_toolbar"
+            bind:refreshpoststat="@{refreshpoststat}"
+            bind:loadingState="@{loadingState}"
+            bind:backnavigation="@{backnavigation}"/>
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+        </FrameLayout>
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/post_statistics_actionbar"
+            />
+
+    </LinearLayout>
+
+</layout>

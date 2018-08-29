@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string name="type_1">"Просмотры "</string>
+    <string name="type_2">"Лайки "</string>
+    <string name="type_3">"Комментаторы "</string>
+    <string name="type_4">"Отметки "</string>
+    <string name="type_5">"Репосты "</string>
+    <string name="type_6">"Закладки "</string>
+    <string name="type_7">"??? "</string>
+
+    <string-array name="statistics_types">
+        <item>@string/type_1</item>
+        <item>@string/type_2</item>
+        <item>@string/type_3</item>
+        <item>@string/type_4</item>
+        <item>@string/type_5</item>
+        <item>@string/type_6</item>
+        <item>@string/type_7</item>
+    </string-array>
+
+    <array name="statistics_icons">
+        <item>@drawable/ic_visibility_black_24dp</item>
+        <item>@drawable/ic_favorite_border_black_24dp</item>
+        <item>@drawable/ic_chat_bubble_outline_black_24dp</item>
+        <item>@drawable/ic_perm_identity_black_24dp</item>
+        <item>@drawable/ic_repost_black_24dp</item>
+        <item>@drawable/ic_bookmark_border_black_24dp</item>
+    </array>
+
+    <array name="statistics_actions_icons">
+        <item>@drawable/ic_poststat_no_action_1</item>
+        <item>@drawable/ic_poststat_action_1</item>
+        <item>@drawable/ic_poststat_no_action_2</item>
+        <item>@drawable/ic_poststat_action_2</item>
+        <item>@drawable/ic_poststat_no_action_3</item>
+        <item>@drawable/ic_poststat_action_3</item>
+        <item>@drawable/ic_poststat_no_action_4</item>
+        <item>@drawable/ic_poststat_action_4</item>
+        <item>@drawable/ic_poststat_no_action_5</item>
+        <item>@drawable/ic_poststat_action_5</item>
+        <item>@drawable/ic_poststat_no_action_2</item>
+        <item>@drawable/ic_poststat_action_2</item>
+        <item>@drawable/ic_poststat_no_action_3</item>
+        <item>@drawable/ic_poststat_action_3</item>
+        <item>@drawable/ic_poststat_no_action_4</item>
+        <item>@drawable/ic_poststat_action_4</item>
+        <item>@drawable/ic_poststat_no_action_5</item>
+        <item>@drawable/ic_poststat_action_5</item>
+    </array>
+
+    <array name="refresh_btn_icons">
+        <item>@drawable/ic_no_refresh_blue_24dp</item>
+        <item>@drawable/ic_refresh_blue_24dp</item>
+    </array>
+
+    <string name="action_1">Главная</string>
+    <string name="action_2">Рейтинг</string>
+    <string name="action_3">Группы</string>
+    <string name="action_4">Активность</string>
+    <string name="action_5">Сообщения</string>
+    <string name="action_6">Подарки</string>
+    <string name="action_7">Баланс</string>
+    <string name="action_8">Биржа</string>
+    <string name="action_9">Настройки</string>
+
+
+    <string-array name="statistics_actions_texts">
+        <item>@string/action_1</item>
+        <item>@string/action_2</item>
+        <item>@string/action_3</item>
+        <item>@string/action_4</item>
+        <item>@string/action_5</item>
+        <item>@string/action_6</item>
+        <item>@string/action_7</item>
+        <item>@string/action_8</item>
+        <item>@string/action_9</item>
+    </string-array>
+
+</resources>
